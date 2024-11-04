@@ -8,9 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        dancing: "Dancing Script Variable",
+        fancy: "Grandstander Variable",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        gold: {
+          DEFAULT: "#efbf04",
+          dark: "#856a00",
+        },
+        pinky: {
+          DEFAULT: "#FF0080",
+        },
       },
     },
   },
