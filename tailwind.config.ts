@@ -11,6 +11,7 @@ const config: Config = {
       fontFamily: {
         dancing: "Dancing Script Variable",
         fancy: "Grandstander Variable",
+        fancy2: "Lexend Variable",
       },
       colors: {
         background: "var(--background)",
