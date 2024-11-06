@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 
 interface IProps {
-  data: IWeddingData;
+  data?: IWeddingData;
 }
 export default function Hero(props: IProps) {
   const { data } = props;
@@ -31,17 +31,24 @@ export default function Hero(props: IProps) {
             </div>
           </div>
         </div>
-        <div className="relative rounded-full aspect-[1/1] w-52 overflow-hidden ">
-          <Image src={data.img} alt="" fill className="object-contain" />
-        </div>
-        <div className="flex flex-col items-center ">
-          <div className="font-dancing text-3xl flex gap-2 items-center font-bold">
-            <p className="">{data.man.name}</p>
-            <p className="">&</p>
-            <p className="">{data.woman.name}</p>
+        <>
+          <div className="relative rounded-full aspect-[1/1] w-52 overflow-hidden ">
+            <Image
+              src={data ? data?.img : "/public/pink-one/imgone.jpeg"}
+              alt=""
+              fill
+              className="object-contain"
+            />
           </div>
-          <p className=" font-fancy2 mt-2">Sabtu, 5 Oktober 2024</p>
-        </div>
+          <div className="flex flex-col items-center ">
+            <div className="font-dancing text-3xl flex gap-2 items-center font-bold">
+              <p className="">{data?.man.name}</p>
+              <p className="">&</p>
+              <p className="">{data?.woman.name}</p>
+            </div>
+            <p className=" font-fancy2 mt-2">Sabtu, 5 Oktober 2024</p>
+          </div>
+        </>
 
         <div className="relative rotate-180 rounded-full aspect-[2/1] w-52 overflow-hidden ">
           <Image

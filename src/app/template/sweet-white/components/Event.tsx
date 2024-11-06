@@ -62,7 +62,8 @@ export default function Event(props: IProps) {
                 </p>
                 <p className="text-center mt-2">{event.address}</p>
                 <Link
-                  href={""}
+                  href={event.locations}
+                  target="_blank"
                   className="py-1 mt-5 hover:scale-110 rounded-xl duration-300 flex items-center gap-2 bg-pinky text-white w-fit px-3"
                 >
                   <FaMapLocationDot />

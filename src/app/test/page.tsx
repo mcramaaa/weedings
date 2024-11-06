@@ -1,13 +1,8 @@
-import { IPageParams } from "@/interfaces/IPageParams";
 import React from "react";
-import SweetWhite from "../template/sweet-white/page";
+import SweetWhite from "../template/sweet-white/SweetWhite";
 import { DEFAULTDATA } from "@/constant/DEFAULTDATA";
 
-export default function page(props: IPageParams) {
-  console.log(props);
-  return (
-    <div>
-      <SweetWhite data={DEFAULTDATA} />
-    </div>
-  );
+export default function page() {
+  const data = DEFAULTDATA;
+  return <div>{data && <SweetWhite data={data} />}</div>;
 }
