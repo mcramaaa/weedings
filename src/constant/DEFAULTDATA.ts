@@ -3,6 +3,26 @@ import { IWeddingData } from "@/interfaces/IWeedingData";
 export const DEFAULTDATA: IWeddingData = {
   ladiesFirst: true,
   img: "/pink-one/imgone.jpeg",
+  man: {
+    name: "Rama",
+    fullName: "Mochamad Ramadhani",
+    age: 30,
+    gender: "Male",
+    anak: "Putra Pertama Dari",
+    bapak: "Kasimen Jiwansa",
+    ibu: "Kasimun Madani",
+    img: "/pink-one/man.jpg",
+  },
+  woman: {
+    name: "Bintang",
+    fullName: "Bintang Dectyanefa Putri Zafira",
+    age: 30,
+    gender: "Female",
+    anak: "Putri Pertama Dari",
+    bapak: "Kasimen Jiwansa",
+    ibu: "Kasimun Madani",
+    img: "/pink-one/woman.jpg",
+  },
   event: [
     {
       tittle: "Akad",
@@ -35,24 +55,18 @@ export const DEFAULTDATA: IWeddingData = {
       locations: "https://g.co/kgs/SV2PDsW",
     },
   ],
-  man: {
-    name: "Rama",
-    fullName: "Mochamad Ramadhani",
-    age: 30,
-    gender: "Male",
-    anak: "Putra Pertama Dari",
-    bapak: "Kasimen Jiwansa",
-    ibu: "Kasimun Madani",
-    img: "/pink-one/man.jpg",
-  },
-  woman: {
-    name: "Bintang",
-    fullName: "Bintang Dectyanefa Putri Zafira",
-    age: 30,
-    gender: "Female",
-    anak: "Putri Pertama Dari",
-    bapak: "Kasimen Jiwansa",
-    ibu: "Kasimun Madani",
-    img: "/pink-one/woman.jpg",
-  },
+  gift: [
+    {
+      name: "Mochamad Ramadhani",
+      accountNumber: "9035023804",
+      bankName: "BCA",
+      img: "",
+    },
+    {
+      name: "Mochamad Ramadhani",
+      accountNumber: "081330129266",
+      bankName: "Dana",
+      img: "",
+    },
+  ],
 };

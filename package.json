@@ -12,6 +12,7 @@
     "@fontsource-variable/dancing-script": "^5.1.0",
     "@fontsource-variable/grandstander": "^5.1.1",
     "@fontsource-variable/lexend": "^5.1.1",
+    "@fontsource/sacramento": "^5.1.0",
     "next": "14.2.16",
     "react": "^18",
     "react-dom": "^18",

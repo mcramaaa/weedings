@@ -9,10 +9,16 @@ interface IEvent {
   locations: string;
 }
 
+interface IGift {
+  name: string;
+  img: string;
+  bankName: string;
+  accountNumber: string;
+}
+
 export interface IWeddingData {
   ladiesFirst: boolean;
   img: string;
-  event: IEvent[];
   man: {
     name: string;
     fullName: string;
@@ -33,4 +39,6 @@ export interface IWeddingData {
     ibu: string;
     img: string;
   };
+  event: IEvent[];
+  gift: IGift[];
 }

@@ -25,8 +25,8 @@ export default function Event(props: IProps) {
       </div>
       <div className="pb-10 px-5">
         <p className="text-center text-sm px-5 lg:text-lg md:mx-40">
-          Kami sangat berharap Bapak/Ibu/Saudara/i dapat menghadiri acara
-          tersebut .
+          Kami sangat berharap Bapak/Ibu/Saudara/i dapat menghadiri rangkaian
+          acara.
         </p>
         {/* <p className="text-center text-sm lg:text-lg md:mx-40">
           Hormat Kami Yang Berbahagia Kel. Bapak Moh Umar & Ibu Lusi Agustina
@@ -37,7 +37,10 @@ export default function Event(props: IProps) {
       {/* AKAD */}
       <div className="flex flex-wrap gap-y-10 gap-x-4 justify-center items-center">
         {data.event.map((event, i) => (
-          <div key={i} className="px-5 text-sm w-[370px] font-fancy2">
+          <div
+            key={i}
+            className="px-5 text-sm w-[370px] font-fancy2 drop-shadow-lg"
+          >
             <div className="relative p-4 rounded-xl bg-white">
               <p className=" text-pinky text-6xl font-bold absolute -top-4 -left-4">
                 <GiSelfLove />

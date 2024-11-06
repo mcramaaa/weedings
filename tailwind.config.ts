@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         dancing: "Dancing Script Variable",
+        dancing2: "Sacramento",
         fancy: "Grandstander Variable",
         fancy2: "Lexend Variable",
       },

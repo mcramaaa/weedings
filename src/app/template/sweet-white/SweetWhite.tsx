@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import Profile from "./components/Profile";
 import Navbar from "./components/Navbar";
 import Event from "./components/Event";
+import Gift from "./components/Gift";
 
 interface IProps {
   to?: string;
@@ -48,7 +49,8 @@ export default function SweetWhite(props: IProps) {
         <div className=" bg-[url('/pink-one/pinkBg.jpg')] bg-cover bg-center bg-pink-200">
           <Profile data={data} />
           <Event data={data} />
-          <div className="sticky bottom-0">
+          <Gift data={data} />
+          <div className="sticky bottom-0 mt-10">
             <Navbar />
           </div>
         </div>
