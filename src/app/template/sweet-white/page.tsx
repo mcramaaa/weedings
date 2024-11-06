@@ -1,43 +1,55 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Opener from "./components/Opener";
 import Hero from "./components/Hero";
 import Profile from "./components/Profile";
 import Navbar from "./components/Navbar";
+import { IWeddingData } from "@/interfaces/IWeedingData";
+import Event from "./components/Event";
 
 interface IProps {
   to?: string;
   conditions?: unknown;
+  data: IWeddingData;
 }
 
 export default function SweetWhite(props: IProps) {
-  console.log(props);
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
+  const [isHide, setIsHide] = useState(false);
+  const { data } = props;
+
+  useEffect(() => {
+    if (isOpen) {
+      const timer = setTimeout(() => {
+        setIsHide(true);
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
+
   return (
-    <div
-      className={`${
-        isOpen ? "" : "h-screen overflow-hidden"
-      } relative w-screen `}
-    >
+    <div className={`${isOpen ? "" : "h-screen overflow-hidden "} relative`}>
       <div
-        className={`z-50 absolute top-0 left-0 h-screen w-screen bg-white transition-transform duration-1000 ease-in-out ${
+        className={`z-50 absolute top-0 h-screen bg-white transition-transform duration-1000 ease-in-out ${
           isOpen ? "-translate-y-full" : "translate-y-0"
-        }`}
+        } ${isHide && "hidden"}`}
       >
         <Opener
+          data={data}
           openMail={() => {
             setIsOpen(true);
           }}
         />
       </div>
-      <div>
-        <Hero />
-        <Profile />
-      </div>
-      <div className="sticky bottom-0">
-        <Navbar />
+      <Hero data={data} />
+      <div className=" bg-[url('/pink-one/pinkBg.jpg')] bg-cover bg-center bg-pink-200">
+        <Profile data={data} />
+        <Event data={data} />
+        <div className="sticky bottom-0">
+          <Navbar />
+        </div>
       </div>
     </div>
   );
