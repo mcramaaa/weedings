@@ -20,18 +20,16 @@ export default function Gift(props: IProps) {
         {data.gift.map((item, i) => (
           <div
             key={i}
-            className="relative w-[375px] h-[225px] rounded-2xl bg-contain bg-no-repeat bg-[url('/pink-one/bankCard.png')]"
+            className="relative w-[374px] h-[225px] rounded-2xl bg-contain bg-no-repeat bg-[url('/pink-one/card.png')] bg-pinky"
           >
             <p className="absolute top-5 text-xl left-16 text-white font-bold">
               {item.bankName}
             </p>
-            <p className="absolute bottom-16 text-xl left-6 font-bold text-white">
+            <p className="absolute bottom-16 text-xl left-6 font-bold">
               {item.accountNumber}
             </p>
-            <p className="absolute bottom-6 left-6 font-bold text-white">
-              {item.name}
-            </p>
-            <button className="absolute bg-white px-2 rounded-lg font-bold right-4 bottom-[66px]">
+            <p className="absolute bottom-6 left-6 font-bold">{item.name}</p>
+            <button className="absolute bg-pinky text-white px-2 rounded-lg hover:scale-110 duration-500 font-bold right-4 bottom-[66px]">
               Salin Nomor
             </button>
           </div>

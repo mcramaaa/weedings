@@ -9,6 +9,17 @@ interface IEvent {
   locations: string;
 }
 
+interface IStuffGift {
+  labelPlace: string;
+  name: string;
+  address: string;
+  kecamatan: string;
+  kabupaten: string;
+  provinsi: string;
+  posCode: string;
+  location: string;
+}
+
 interface IGift {
   name: string;
   img: string;
@@ -41,4 +52,5 @@ export interface IWeddingData {
   };
   event: IEvent[];
   gift: IGift[];
+  stuffGift: IStuffGift[];
 }
