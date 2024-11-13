@@ -3,6 +3,7 @@ import { IWeddingData } from "@/interfaces/IWeedingData";
 export const DEFAULTDATA: IWeddingData = {
   ladiesFirst: true,
   img: "/pink-one/imgone.jpeg",
+  eventDate: "Sabtu, 17 Agustus 2025",
   man: {
     name: "Yono",
     fullName: "Yono Tanminto",
@@ -45,46 +46,6 @@ export const DEFAULTDATA: IWeddingData = {
       address: "Jl. Masjid Agung Surabaya",
       locations: "https://g.co/kgs/SV2PDsW",
     },
-    {
-      tittle: "Resepsi2",
-      description: "Acara berlangsung siang hari menggunakan dresscode pink",
-      day: "Senin",
-      date: "8 Desember 2026",
-      time: "10.00 WIB",
-      placeName: "Masjid Al-Akbar Surabaya",
-      address: "Jl. Masjid Agung Surabaya",
-      locations: "https://g.co/kgs/SV2PDsW",
-    },
-    {
-      tittle: "Resepsi2",
-      description: "Acara berlangsung siang hari menggunakan dresscode pink",
-      day: "Senin",
-      date: "8 Desember 2026",
-      time: "10.00 WIB",
-      placeName: "Masjid Al-Akbar Surabaya",
-      address: "Jl. Masjid Agung Surabaya",
-      locations: "https://g.co/kgs/SV2PDsW",
-    },
-    {
-      tittle: "Resepsi2",
-      description: "Acara berlangsung siang hari menggunakan dresscode pink",
-      day: "Senin",
-      date: "8 Desember 2026",
-      time: "10.00 WIB",
-      placeName: "Masjid Al-Akbar Surabaya",
-      address: "Jl. Masjid Agung Surabaya",
-      locations: "https://g.co/kgs/SV2PDsW",
-    },
-    {
-      tittle: "Resepsi",
-      description: "Acara berlangsung siang hari menggunakan dresscode pink",
-      day: "Senin",
-      date: "8 Desember 2026",
-      time: "10.00 WIB",
-      placeName: "Masjid Al-Akbar Surabaya",
-      address: "Jl. Masjid Agung Surabaya",
-      locations: "https://g.co/kgs/SV2PDsW",
-    },
   ],
   gift: [
     {
@@ -103,6 +64,7 @@ export const DEFAULTDATA: IWeddingData = {
   stuffGift: [
     {
       name: "Yono Tanmianto",
+      phone: "6281330129266",
       labelPlace: "Rumah",
       location: "https://g.co/kgs/SV2PDsW",
       address: "Ds. Mandirejo RT.01 RW.01",

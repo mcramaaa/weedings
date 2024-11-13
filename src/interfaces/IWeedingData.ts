@@ -11,6 +11,7 @@ interface IEvent {
 
 interface IStuffGift {
   labelPlace: string;
+  phone: string;
   name: string;
   address: string;
   kecamatan: string;
@@ -30,6 +31,7 @@ interface IGift {
 export interface IWeddingData {
   ladiesFirst: boolean;
   img: string;
+  eventDate: string;
   man: {
     name: string;
     fullName: string;
