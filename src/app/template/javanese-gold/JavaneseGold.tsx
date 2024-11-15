@@ -43,7 +43,7 @@ export default function JavaneseGold(props: IProps) {
       </div>
       <Hero data={data} />
       <Profile data={data} />
-      <OurStory />
+      {data.loveStory && <OurStory storyData={data.loveStory} />}
     </div>
   );
 }

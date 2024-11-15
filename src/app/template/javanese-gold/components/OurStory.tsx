@@ -1,7 +1,12 @@
 import Image from "next/image";
 import React from "react";
 
-export default function OurStory() {
+interface Iprops {
+  storyData: { label: string; description: string }[];
+}
+
+export default function OurStory(props: Iprops) {
+  const { storyData } = props;
   return (
     <div className="flex flex-col items-center">
       <div className="relative w-52 aspect-[2/1]">
@@ -11,6 +16,50 @@ export default function OurStory() {
           fill
           className="object-contain object-center"
         />
+      </div>
+      <div className="relative w-full h-full bg-white overflow-hidden">
+        <div className="relative aspect-[10/2] scale-105 flex justify-center">
+          <Image
+            src={"/javanese-gold/roundFrame.svg"}
+            alt=""
+            fill
+            className="object-cover object-center"
+          />
+        </div>
+        <div className=" bg-[url(/javanese-gold/batikBckR.svg)] bg-transparent bg-cover bg-opacity-85 bg-no-repeat w-full bg-center">
+          <div className="bg-white/85 p-4 flex flex-col gap-10">
+            {storyData.map((data, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <div className="flex items-center bg-black px-4 py-1 rounded-full gap-2 text-white font-bold">
+                  <div className="aspect-square w-5 rotate-90 relative">
+                    <Image
+                      src={"/javanese-gold/borderBottom.svg"}
+                      alt=""
+                      fill
+                    />
+                  </div>
+                  <p>{data.label}</p>
+                  <div className="aspect-square w-5 -rotate-90 relative">
+                    <Image
+                      src={"/javanese-gold/borderBottom.svg"}
+                      alt=""
+                      fill
+                    />
+                  </div>
+                </div>
+                <p className="text-sm mt-3">{data.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="relative rotate-180 aspect-[10/2] scale-105 flex justify-center">
+          <Image
+            src={"/javanese-gold/roundFrame.svg"}
+            alt=""
+            fill
+            className="object-cover object-center"
+          />
+        </div>
       </div>
     </div>
   );

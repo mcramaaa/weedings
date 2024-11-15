@@ -66,7 +66,7 @@ export default function Hero(props: IProps) {
               <div className="flex flex-col items-center mt-10">
                 <div className="font-dancing text-center gap-3 pb-10 text-4xl flex">
                   <p>{firstPerson}</p>
-                  <p>&</p>
+                  <p className="text-javanese-secondary">&</p>
                   <p>{secondPerson}</p>
                 </div>
                 <p className="font-fancy2 pt-2">{data.eventDate}</p>

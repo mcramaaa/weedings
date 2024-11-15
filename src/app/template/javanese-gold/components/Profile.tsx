@@ -41,7 +41,7 @@ export default function Profile(props: IProps) {
               className="object-contain object-center -translate-x-1/2 scale-150 opacity-25"
             />
             <div className="flex justify-center">
-              <div className="relative aspect-[1/2] rounded-b-full flex justify-center rounded-t-full overflow-hidden w-40 md:w-52">
+              <div className="relative aspect-[1/2] overflow-hidden w-52">
                 <Image
                   src={firstPerson.img}
                   alt=""
@@ -94,7 +94,7 @@ export default function Profile(props: IProps) {
               </div>
             </div>
             <div className="flex lg:order-first justify-center">
-              <div className="relative aspect-[1/2] rounded-b-full flex justify-center rounded-t-full w-40 md:w-52">
+              <div className="relative aspect-[1/2] w-52">
                 <Image
                   src={secondPerson.img}
                   alt=""
