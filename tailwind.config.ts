@@ -24,6 +24,11 @@ const config: Config = {
         pinky: {
           DEFAULT: "#FF0080",
         },
+        javanese: {
+          DEFAULT: "#D69A2D",
+          secondary: "#DDAB44",
+          white: "#FFF8AF",
+        },
       },
     },
   },

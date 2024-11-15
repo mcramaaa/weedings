@@ -43,7 +43,7 @@ export default function Opener(props: IProps) {
                 className="object-contain"
               />
             </div>
-            <p className="font-dancing2 py-4 text-5xl">The Wedding</p>
+            <p className="font-dancing2 font-bold py-4 text-5xl">The Wedding</p>
             <div className="relative w-40 aspect-[3/1]">
               <Image
                 src={"/javanese-gold/borderTop.svg"}
@@ -53,7 +53,7 @@ export default function Opener(props: IProps) {
               />
             </div>
             <div className="flex flex-col items-center mt-10">
-              <div className="font-dancing2 font-bold text-center gap-3 pb-10 text-4xl flex">
+              <div className="font-dancing2 text-center gap-3 pb-10 text-4xl flex">
                 <p>{firstPerson}</p>
                 <p>&</p>
                 <p>{secondPerson}</p>

@@ -15,13 +15,14 @@ export default function Profile(props: IProps) {
 
   return (
     <div className="relative">
-      <div className="flex flex-col mt-6 bg-gradient-to-b from-white/0 via-white to-white/0 items-center">
-        <div className="relative aspect-[3/2] w-60">
+      <div className="flex flex-col mt-6 items-center">
+        <div className="relative aspect-[3/2] w-52">
           <Image
-            src={"/pink-one/ourWeeding2.png"}
+            src={"/javanese-gold/ourWeeding.png"}
             alt=""
             fill
-            className="object-cover object-center"
+            className="object-contain object-center"
+            quality={100}
           />
         </div>
       </div>
@@ -39,20 +40,23 @@ export default function Profile(props: IProps) {
                   src={firstPerson.img}
                   alt=""
                   fill
-                  className="object-cover object-center"
+                  className="object-contain object-center"
+                  quality={100}
                 />
-                <div className="absolute font-dancing font-bold text-3xl bottom-7 py-1 bg-white w-full text-center">
+                {/* <div className="absolute font-dancing font-bold text-3xl bottom-7 py-1 bg-white w-full text-center">
                   {firstPerson.name}
-                </div>
+                </div> */}
               </div>
             </div>
-            <div className="md:order-first flex text-center lg:col-span-2 p-4 gap-y-3 justify-center flex-col">
-              <p>{ladiesFirst ? "Mempelai Wanita" : "Mempelai Pria"}</p>
+            <div className="md:order-first flex text-javanese-white text-center lg:col-span-2 p-4 gap-y-3 justify-center flex-col">
+              <p className="text-white">
+                {ladiesFirst ? "Mempelai Wanita" : "Mempelai Pria"}
+              </p>
               <p className="font-dancing text-3xl lg:text-4xl text-wrap">
                 {firstPerson.fullName}
               </p>
-              <div className="border-y border-pinky py-3">
-                <p className="font-bold text-pinky">{firstPerson.anak}</p>
+              <div className="border-y border-javanese py-3">
+                <p className="font-bold text-white">{firstPerson.anak}</p>
                 <p>
                   {firstPerson.bapak} & {firstPerson.ibu}
                 </p>
@@ -60,19 +64,21 @@ export default function Profile(props: IProps) {
             </div>
           </div>
 
-          <div className="grid place-items-center w-full text-8xl text-gold-dark font-dancing">
+          <div className="grid place-items-center w-full text-8xl text-javanese-secondary font-dancing">
             <p>&</p>
           </div>
 
           {/* Bagian untuk Second Person */}
           <div className="grid grid-cols-2 lg:grid-cols-3 lg:col-span-4 h-fit">
-            <div className="flex text-center p-4 lg:col-span-2 justify-center gap-y-3 flex-col">
-              <p>{ladiesFirst ? "Mempelai Pria" : "Mempelai Wanita"}</p>
+            <div className="flex text-center text-javanese-white p-4 lg:col-span-2 justify-center gap-y-3 flex-col">
+              <p className="text-white">
+                {ladiesFirst ? "Mempelai Wanita" : "Mempelai Pria"}
+              </p>
               <p className="font-dancing text-2xl lg:text-4xl text-wrap">
                 {secondPerson.fullName}
               </p>
-              <div className="border-y border-pinky py-3">
-                <p className="font-bold text-pinky">{secondPerson.anak}</p>
+              <div className="border-y border-javanese py-3">
+                <p className="font-bold text-white">{secondPerson.anak}</p>
                 <p>
                   {secondPerson.bapak} & {secondPerson.ibu}
                 </p>
@@ -84,11 +90,12 @@ export default function Profile(props: IProps) {
                   src={secondPerson.img}
                   alt=""
                   fill
-                  className="object-cover object-center"
+                  className="object-contain object-center"
+                  quality={100}
                 />
-                <div className="absolute font-dancing font-bold text-3xl bottom-7 py-1 bg-white w-full text-center">
+                {/* <div className="absolute font-dancing font-bold text-3xl bottom-7 py-1 bg-white w-full text-center">
                   {secondPerson.name}
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
