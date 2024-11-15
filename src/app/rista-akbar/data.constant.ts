@@ -24,6 +24,23 @@ export const ristaAkbar: IWeddingData = {
     ibu: "Ibu Khoriah",
     img: "/rista-akbar/woman.png",
   },
+  loveStory: [
+    {
+      label: "Bertemu",
+      description:
+        "Awal kisah kami dimulai saat seorang teman memperkenalkan kami. Pertemuan pertama kami berlangsung di kampus Universitas Airlangga (Unair), saat kami berdua masih berstatus mahasiswa, meskipun dia lebih tua. Sejak pertama bertemu, kami merasa cocok, dan komunikasi semakin intens seiring berjalannya waktu. Hingga akhirnya, dia menyatakan perasaannya di salah satu taman kota Surabaya, dan sejak saat itu, kami memulai perjalanan bersama.",
+    },
+    {
+      label: "Lamaran",
+      description:
+        "Selama menjalin hubungan, kami sama-sama berjuang untuk menyelesaikan kuliah dan meraih gelar sarjana. Kami saling mendukung dalam merintis masa depan, berbagi semangat dan harapan. Dia pernah berjanji bahwa setelah lulus kuliah, dia akan melamar. Alhamdulillah, setelah wisuda dan bekerja selama tiga bulan, dia menepati janji itu. Saat itu, saya masih bekerja sambil kuliah, namun lamaran darinya tidak menghentikan semangat saya untuk menyelesaikan pendidikan dan mempertahankan cita-cita menjadi sarjana.",
+    },
+    {
+      label: "Menikah",
+      description:
+        "Setahun setelah lamaran, kami memantapkan langkah untuk ke jenjang yang lebih serius. Dia mengajak saya untuk menikah, menyatukan dua hati dan merangkai masa depan bersama. Perjalanan panjang penuh perjuangan itu akhirnya sampai pada titik bahagia, yang kini menjadi awal dari babak baru dalam hidup kami sebagai pasangan suami istri.",
+    },
+  ],
   event: [
     {
       tittle: "Akad",

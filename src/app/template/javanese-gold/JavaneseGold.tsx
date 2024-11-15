@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import Opener from "./components/Opener";
 import Hero from "./components/Hero";
 import Profile from "./components/Profile";
+import OurStory from "./components/OurStory";
 
 interface IProps {
   to?: string;
@@ -42,6 +43,7 @@ export default function JavaneseGold(props: IProps) {
       </div>
       <Hero data={data} />
       <Profile data={data} />
+      <OurStory />
     </div>
   );
 }

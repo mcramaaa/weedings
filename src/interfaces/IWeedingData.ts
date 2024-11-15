@@ -21,6 +21,11 @@ interface IStuffGift {
   location: string;
 }
 
+interface ILoveStory {
+  label: string;
+  description: string;
+}
+
 interface IGift {
   name: string;
   img: string;
@@ -52,6 +57,7 @@ export interface IWeddingData {
     ibu: string;
     img: string;
   };
+  loveStory?: ILoveStory[];
   event: IEvent[];
   gift: IGift[];
   stuffGift: IStuffGift[];
