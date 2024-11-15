@@ -26,10 +26,10 @@ export default function OurStory(props: Iprops) {
             className="object-cover object-center"
           />
         </div>
-        <div className=" bg-[url(/javanese-gold/batikBckR.svg)] bg-transparent bg-cover bg-opacity-85 bg-no-repeat w-full bg-center">
-          <div className="bg-white/85 p-4 flex flex-col gap-10">
+        <div className=" bg-[url(/javanese-gold/batikBckR.svg)] bg-transparent bg-cover md:bg-contain bg-opacity-85 bg-no-repeat w-full bg-center">
+          <div className="bg-white/85 p-4 flex flex-col md:justify-center items-center md:items-start md:px-32 w-full md:flex-row md:flex-wrap gap-10">
             {storyData.map((data, i) => (
-              <div key={i} className="flex flex-col items-center">
+              <div key={i} className="flex flex-col items-center lg:w-[360px]">
                 <div className="flex items-center bg-black px-4 py-1 rounded-full gap-2 text-white font-bold">
                   <div className="aspect-square w-5 rotate-90 relative">
                     <Image
@@ -47,7 +47,7 @@ export default function OurStory(props: Iprops) {
                     />
                   </div>
                 </div>
-                <p className="text-sm mt-3">{data.description}</p>
+                <p className="text-sm mt-3 text-justify">{data.description}</p>
               </div>
             ))}
           </div>
