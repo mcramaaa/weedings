@@ -14,7 +14,7 @@ export default function Profile(props: IProps) {
   const secondPerson = ladiesFirst ? data.man : data.woman;
 
   return (
-    <div className="relative overflow-x-hidden overflow-y-clip">
+    <div className="relative overflow-x-hidden pb-28">
       <div className="flex flex-col mt-6 items-center">
         <div className="relative aspect-[3/2] w-52">
           <Image
@@ -38,10 +38,10 @@ export default function Profile(props: IProps) {
               src={"/javanese-gold/batikBckR.svg"}
               alt=""
               fill
-              className="object-contain object-center -translate-x-48 scale-150 opacity-25"
+              className="object-contain object-center -translate-x-1/2 scale-150 opacity-25"
             />
             <div className="flex justify-center">
-              <div className="relative aspect-[1/2] rounded-b-full flex justify-center rounded-t-full overflow-hidden w-40 lg:w-52">
+              <div className="relative aspect-[1/2] rounded-b-full flex justify-center rounded-t-full overflow-hidden w-40 md:w-52">
                 <Image
                   src={firstPerson.img}
                   alt=""
@@ -51,7 +51,7 @@ export default function Profile(props: IProps) {
                 />
               </div>
             </div>
-            <div className="md:order-first flex text-javanese-white text-center lg:col-span-2 p-4 gap-y-3 justify-center flex-col">
+            <div className="lg:order-first flex text-javanese-white text-center lg:col-span-2 p-4 gap-y-3 justify-center flex-col">
               <p className="text-white">
                 {ladiesFirst ? "Mempelai Wanita" : "Mempelai Pria"}
               </p>
@@ -77,7 +77,7 @@ export default function Profile(props: IProps) {
               src={"/javanese-gold/batikBckL.svg"}
               alt=""
               fill
-              className="object-contain object-center translate-x-48 scale-150 opacity-25"
+              className="object-contain object-center translate-x-1/2 scale-150 opacity-25"
             />
             <div className="flex text-center text-javanese-white p-4 lg:col-span-2 justify-center gap-y-3 flex-col">
               <p className="text-white">
@@ -93,8 +93,8 @@ export default function Profile(props: IProps) {
                 </p>
               </div>
             </div>
-            <div className="flex md:order-first justify-center">
-              <div className="relative aspect-[1/2] rounded-b-full flex justify-center rounded-t-full overflow-hidden w-40 lg:w-52">
+            <div className="flex lg:order-first justify-center">
+              <div className="relative aspect-[1/2] rounded-b-full flex justify-center rounded-t-full w-40 md:w-52">
                 <Image
                   src={secondPerson.img}
                   alt=""

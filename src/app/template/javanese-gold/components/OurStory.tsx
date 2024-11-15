@@ -3,8 +3,8 @@ import React from "react";
 
 export default function OurStory() {
   return (
-    <div>
-      <div className="relative aspect-[2/1]">
+    <div className="flex flex-col items-center">
+      <div className="relative w-52 aspect-[2/1]">
         <Image
           src={"/javanese-gold/ourStory.png"}
           alt=""
