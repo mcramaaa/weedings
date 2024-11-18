@@ -6,6 +6,8 @@ import Opener from "./components/Opener";
 import Hero from "./components/Hero";
 import Profile from "./components/Profile";
 import OurStory from "./components/OurStory";
+import Event from "./components/Event";
+import Gift from "./components/Gift";
 
 interface IProps {
   to?: string;
@@ -44,6 +46,8 @@ export default function JavaneseGold(props: IProps) {
       <Hero data={data} />
       <Profile data={data} />
       {data.loveStory && <OurStory storyData={data.loveStory} />}
+      <Event data={data} />
+      {data.gift && <Gift data={data} />}
     </div>
   );
 }

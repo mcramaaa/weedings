@@ -54,7 +54,7 @@ export const ristaAkbar: IWeddingData = {
     },
 
     {
-      tittle: "Resepsi2",
+      tittle: "Resepsi",
       description: "Acara berlangsung siang hari menggunakan dresscode pink",
       day: "Senin",
       date: "8 Desember 2026",
