@@ -8,6 +8,7 @@ import Profile from "./components/Profile";
 import OurStory from "./components/OurStory";
 import Event from "./components/Event";
 import Gift from "./components/Gift";
+import CommentComponent from "./components/Comment";
 
 interface IProps {
   to?: string;
@@ -48,6 +49,7 @@ export default function JavaneseGold(props: IProps) {
       {data.loveStory && <OurStory storyData={data.loveStory} />}
       <Event data={data} />
       {data.gift && <Gift data={data} />}
+      <CommentComponent />
     </div>
   );
 }
