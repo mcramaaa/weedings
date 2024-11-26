@@ -1,15 +1,16 @@
 export interface IReplies {
-  name: string;
-  userProfile: string;
-  content: string;
-  createAt: string;
+  name?: string;
+  userProfile?: string;
+  content?: string;
+  createdAt?: string;
 }
 
 export interface IComments {
-  id: number;
-  name: string;
-  userProfile: string;
-  content: string;
-  createdAt: string;
-  replies: IReplies[];
+  id?: number;
+  name?: string;
+  userProfile?: string;
+  content?: string;
+  weedingPathName?: string;
+  createdAt?: string;
+  replies?: IReplies[];
 }
