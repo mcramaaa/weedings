@@ -6,6 +6,9 @@ import { id as localeID } from "date-fns/locale";
 import { convertDate } from "@/helper/converDate";
 import { FaReply } from "react-icons/fa";
 import { IReplies } from "@/interfaces/IComments";
+import dayjs from "dayjs";
+
+dayjs.locale("id");
 
 interface IRepliesProps {
   payload: IReplies | undefined;
@@ -22,7 +25,7 @@ function Replies(props: IRepliesProps) {
   return (
     <form
       onSubmit={handleSubmitReplies}
-      className="flex items-center flex-col gap-2 mt-5"
+      className="flex items-center flex-col gap-2"
     >
       <div className="w-full">
         <label className="text-black font-bold" htmlFor="">
@@ -75,6 +78,8 @@ export default function Comment() {
     handleCancelReply,
   } = useComment();
 
+  console.log(commentPayload?.name);
+  console.log(isReplies);
   return (
     <div className="text-white mt-10 bg-[url(/javanese-gold/batikBckR.svg)] bg-contain bg-no-repeat bg-center">
       <div className="bg-black/70 p-6">
@@ -91,7 +96,9 @@ export default function Comment() {
               <input
                 type="text"
                 name="name"
-                value={commentPayload?.name}
+                value={
+                  commentPayload?.name === undefined ? "" : commentPayload.name
+                }
                 onChange={(e) => handleChangeInput(e, "comment")}
                 className="w-full rounded-lg bg-white/60 p-1 text-base"
               />
@@ -102,7 +109,11 @@ export default function Comment() {
               </label>
               <textarea
                 name="content"
-                value={commentPayload?.content}
+                value={
+                  commentPayload?.content === undefined
+                    ? ""
+                    : commentPayload?.content
+                }
                 onChange={(e) => handleChangeInput(e, "comment")}
                 className="w-full rounded-lg min-h-10 bg-white/60 p-2"
               />
@@ -118,29 +129,31 @@ export default function Comment() {
                 {isComments.map((comment, i) => (
                   <div key={i}>
                     <div className="bg-white/80 rounded-lg p-2">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 rounded-full overflow-hidden aspect-square relative">
+                      <div className="flex items-start gap-2">
+                        <div className="w-7 rounded-full bg-pink-300 overflow-hidden aspect-square relative">
                           <img
                             src={comment.userProfile}
                             alt=""
                             className="object-contain"
                           />
                         </div>
-                        <p className="font-bold">{comment.name}</p>
-                        {comment.createdAt && (
-                          <p className="text-xs text-slate-500 mt-[2px]">
-                            {formatDistanceToNow(
-                              convertDate(comment.createdAt),
-                              {
-                                addSuffix: true,
-                                locale: localeID,
-                              }
-                            )}
-                          </p>
-                        )}
+                        <div className="flex flex-wrap gap-x-2">
+                          <p className="font-bold w-fit">{comment.name}</p>
+                          {comment.createdAt && (
+                            <p className="text-xs text-slate-500 mt-[3px] w-fit">
+                              {formatDistanceToNow(
+                                convertDate(comment.createdAt),
+                                {
+                                  addSuffix: true,
+                                  locale: localeID,
+                                }
+                              )}
+                            </p>
+                          )}
+                        </div>
                       </div>
                       <p className="ml-9">{comment.content}</p>
-                      <div className="text-xs ml-9 mt-2 text-slate-600">
+                      <div className="text-xs ml-9 mt-1 text-slate-600">
                         <button
                           className="flex gap-1"
                           onClick={() => handleSelectReply(i)}
@@ -148,26 +161,28 @@ export default function Comment() {
                           <FaReply />
                           Balas
                         </button>
-                        {isReplies === i && (
-                          <Replies
-                            payload={repliesPayload}
-                            handleChangeInput={(e) =>
-                              handleChangeInput(e, "reply")
-                            }
-                            handleSubmitReplies={(e) =>
-                              handleSubmitReply(e, comment.id)
-                            }
-                            handleCancelReply={handleCancelReply}
-                          />
+                        {isReplies?.parentId === i && !isReplies.replyId && (
+                          <div className="mt-3">
+                            <Replies
+                              payload={repliesPayload}
+                              handleChangeInput={(e) =>
+                                handleChangeInput(e, "reply")
+                              }
+                              handleSubmitReplies={(e) =>
+                                handleSubmitReply(e, comment.id)
+                              }
+                              handleCancelReply={handleCancelReply}
+                            />
+                          </div>
                         )}
                       </div>
                     </div>
                     {comment.replies && (
                       <div className="flex flex-col">
-                        {comment.replies.map((reply, i) => (
-                          <div className="ml-3 pl-3 border-l pt-3" key={i}>
+                        {comment.replies.map((reply, idx) => (
+                          <div className="ml-3 pl-3 border-l pt-3" key={idx}>
                             <div className="bg-white/70 rounded-lg p-2">
-                              <div className="flex items-center gap-2">
+                              <div className="flex items-start gap-2">
                                 <div className="w-7 rounded-full overflow-hidden aspect-square relative">
                                   <img
                                     src={reply.userProfile}
@@ -175,41 +190,45 @@ export default function Comment() {
                                     className="object-contain"
                                   />
                                 </div>
-                                <p className="font-bold">{reply.name}</p>
-                                {reply.createdAt && (
-                                  <p className="text-xs text-slate-500 mt-[2px]">
-                                    {formatDistanceToNow(
-                                      convertDate(reply.createdAt),
-                                      {
+                                <div className="flex flex-wrap gap-x-2">
+                                  <p className="font-bold">{reply.name}</p>
+                                  {reply.createdAt && (
+                                    <p className="text-xs text-slate-500 mt-[3px]">
+                                      {formatDistanceToNow(reply.createdAt, {
                                         addSuffix: true,
                                         locale: localeID,
-                                      }
-                                    )}
-                                  </p>
-                                )}
+                                      })}
+                                    </p>
+                                  )}
+                                </div>
                               </div>
                               <p className="ml-9">{reply.content}</p>
-                              {/* <div className="text-xs ml-9 mt-2 text-slate-600">
+                              <div className="text-xs ml-9 mt-1 text-slate-600">
                                 <button
                                   className="flex gap-1"
-                                  onClick={() => handleSelectReply(i)}
+                                  onClick={() =>
+                                    handleSelectReply(comment.id, idx)
+                                  }
                                 >
                                   <FaReply />
                                   Balas
                                 </button>
-                                {isReplies === i && (
-                                  <Replies
-                                    payload={repliesPayload}
-                                    handleChangeInput={(e) =>
-                                      handleChangeInput(e, "reply")
-                                    }
-                                    handleSubmitReplies={(e) =>
-                                      handleSubmitReply(e, comment.id)
-                                    }
-                                    handleCancelReply={handleCancelReply}
-                                  />
-                                )}
-                              </div> */}
+                                <div className="mt-3">
+                                  {isReplies?.parentId === comment.id &&
+                                    isReplies?.replyId === idx && (
+                                      <Replies
+                                        payload={repliesPayload}
+                                        handleChangeInput={(e) =>
+                                          handleChangeInput(e, "reply")
+                                        }
+                                        handleSubmitReplies={(e) =>
+                                          handleSubmitReply(e, comment.id)
+                                        }
+                                        handleCancelReply={handleCancelReply}
+                                      />
+                                    )}
+                                </div>
+                              </div>
                             </div>
                           </div>
                         ))}

@@ -8,7 +8,11 @@ import { ChangeEvent, useEffect, useState } from "react";
 const useComment = () => {
   const path = usePathname().slice(1);
   const { setError, setIsSuccess } = useLayout();
-  const [isReplies, setIsReplies] = useState<number | null>(null);
+  // const [isReplies, setIsReplies] = useState<number | null>(null);
+  const [isReplies, setIsReplies] = useState<{
+    parentId?: number;
+    replyId?: number;
+  } | null>(null);
   const [isComments, setIsComments] = useState<IComments[]>();
   const [commentPayload, setCommentPayload] = useState<IComments>();
   const [repliesPayload, setRepliesPayload] = useState<IReplies>();
@@ -37,6 +41,8 @@ const useComment = () => {
       });
   }
 
+  console.log(isComments);
+  console.log(commentPayload);
   async function postReply(parentId?: number) {
     const payload: IComments = {
       ...repliesPayload,
@@ -47,6 +53,7 @@ const useComment = () => {
       .then(() => {
         setIsSuccess(true, "Berhasil membalas ucapan");
         setCommentPayload(undefined);
+        console.log("first");
         setIsReplies(null);
       })
       .then(() => {
@@ -84,8 +91,8 @@ const useComment = () => {
     postReply(parentId);
   }
 
-  function handleSelectReply(i: number) {
-    setIsReplies(i);
+  function handleSelectReply(parentId?: number, replyId?: number) {
+    setIsReplies({ parentId, replyId });
     setRepliesPayload(undefined);
   }
 
