@@ -18,7 +18,7 @@ export default function Profile(props: IProps) {
     <div className="relative">
       <div className="bg-gradient-to-b from-pinky/25  to-white/0 h-32"></div>
       <div className="flex absolute -top-7 justify-center w-full gap-4">
-        <Countdown />
+        <Countdown eventDate={data.eventDate} />
       </div>
       <div className="flex flex-col mt-6 bg-gradient-to-b from-white/0 via-white to-white/0 items-center">
         <div className="relative aspect-[3/2] w-60">
