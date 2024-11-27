@@ -41,8 +41,6 @@ const useComment = () => {
       });
   }
 
-  console.log(isComments);
-  console.log(commentPayload);
   async function postReply(parentId?: number) {
     const payload: IComments = {
       ...repliesPayload,
@@ -53,7 +51,6 @@ const useComment = () => {
       .then(() => {
         setIsSuccess(true, "Berhasil membalas ucapan");
         setCommentPayload(undefined);
-        console.log("first");
         setIsReplies(null);
       })
       .then(() => {

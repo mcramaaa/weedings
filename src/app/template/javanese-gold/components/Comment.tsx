@@ -78,10 +78,9 @@ export default function Comment() {
     handleCancelReply,
   } = useComment();
 
-  console.log(commentPayload?.name);
-  console.log(isReplies);
   return (
-    <div className="text-white mt-10 bg-[url(/javanese-gold/batikBckR.svg)] bg-contain bg-no-repeat bg-center">
+    <div className="text-white mt-10 bg-[url(/javanese-gold/batikBckR.svg)] bg-contain bg-center">
+      <div className="bg-gradient-to-b from-black to-black/70 h-10"></div>
       <div className="bg-black/70 p-6">
         <p>Wedding Wish</p>
         <div className="bg-white/10 flex flex-col gap-4 p-4 backdrop-blur-sm text-black text-sm rounded-lg bg">
@@ -100,7 +99,7 @@ export default function Comment() {
                   commentPayload?.name === undefined ? "" : commentPayload.name
                 }
                 onChange={(e) => handleChangeInput(e, "comment")}
-                className="w-full rounded-lg bg-white/60 p-1 text-base"
+                className="w-full rounded-full bg-white/60 p-1 text-base"
               />
             </div>
             <div className="w-full">
@@ -128,7 +127,7 @@ export default function Comment() {
               <div className="flex flex-col gap-3 mt-4 border-t pt-4">
                 {isComments.map((comment, i) => (
                   <div key={i}>
-                    <div className="bg-white/80 rounded-lg p-2">
+                    <div className="bg-white/80 rounded-lg px-2 py-1">
                       <div className="flex items-start gap-2">
                         <div className="w-7 rounded-full bg-pink-300 overflow-hidden aspect-square relative">
                           <img
@@ -213,9 +212,9 @@ export default function Comment() {
                                   <FaReply />
                                   Balas
                                 </button>
-                                <div className="mt-3">
-                                  {isReplies?.parentId === comment.id &&
-                                    isReplies?.replyId === idx && (
+                                {isReplies?.parentId === comment.id &&
+                                  isReplies?.replyId === idx && (
+                                    <div className="mt-3">
                                       <Replies
                                         payload={repliesPayload}
                                         handleChangeInput={(e) =>
@@ -226,8 +225,8 @@ export default function Comment() {
                                         }
                                         handleCancelReply={handleCancelReply}
                                       />
-                                    )}
-                                </div>
+                                    </div>
+                                  )}
                               </div>
                             </div>
                           </div>

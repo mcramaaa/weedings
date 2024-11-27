@@ -8,23 +8,32 @@ interface IProps {
 }
 export default function Hero(props: IProps) {
   const { data } = props;
+  const eventDate = new Date(data.eventDate);
+  const formattedDate = new Intl.DateTimeFormat("id-ID", {
+    weekday: "long", // Hari (contoh: Senin)
+    day: "numeric", // Tanggal
+    month: "long", // Nama bulan lengkap (contoh: Januari)
+    year: "numeric", // Tahun (contoh: 2024)
+    timeZone: "Asia/Jakarta", // WIB timezone
+  }).format(eventDate);
   const firstPerson = data.ladiesFirst ? data.woman.name : data.man.name;
   const secondPerson = data.ladiesFirst ? data.man.name : data.woman.name;
   return (
     <div className="relative bg-[url('/javanese-gold/bgCouple.png')] overflow-hidden bg-center bg-cover h-[100vh]">
-      <div className="absolute top-0 sm:-top-60 w-full flex justify-center">
-        <div className="relative w-full aspect-[2/1] sm:aspect-square sm:max-w-[425px]">
+      <div className="absolute -top-52 sm:-top-60 w-full z-0 flex justify-center">
+        <div className="relative w-full scale-125 aspect-[1/1] sm:aspect-square sm:max-w-[425px]">
           <Image
-            src={"/javanese-gold/heroTop.svg"}
+            // src={"/javanese-gold/heroTop.svg"}
+            src={"/javanese-gold/roundBatik.svg"}
             alt=""
             fill
-            className="object-contain sm:hidden"
+            className="object-contain sm:hidden scale-150 animate-spinsverylow"
           />
           <Image
             src={"/javanese-gold/roundBatik.svg"}
             alt=""
             fill
-            className="hidden sm:block object-contain"
+            className="hidden sm:block object-contain animate-spinsverylow"
           />
         </div>
       </div>
@@ -69,7 +78,7 @@ export default function Hero(props: IProps) {
                   <p className="text-javanese-secondary">&</p>
                   <p>{secondPerson}</p>
                 </div>
-                <p className="font-fancy2 pt-2">{data.eventDate}</p>
+                <p className="font-fancy2 pt-2">{formattedDate}</p>
               </div>
               <div className="relative w-40 mt-3 aspect-[3/1]">
                 <Image
@@ -91,13 +100,18 @@ export default function Hero(props: IProps) {
             />
           </div>
           <div className="flex justify-center w-full mt-10 gap-4">
-            <Countdown />
+            <Countdown eventDate={data.eventDate} />
           </div>
         </div>
       </div>
       <div className="absolute flex justify-center -bottom-10 w-full">
         <div className="relative w-full aspect-square max-w-[425px]">
-          <Image src={"/javanese-gold/roundBatik.svg"} alt="" fill />
+          <Image
+            src={"/javanese-gold/roundBatik.svg"}
+            alt=""
+            fill
+            className="animate-spinslow"
+          />
         </div>
       </div>
       <div className="bg-gradient-to-t from-black to-black/0 absolute bottom-0 w-full h-1/2"></div>

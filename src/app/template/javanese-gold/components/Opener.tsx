@@ -10,6 +10,14 @@ interface IProps {
 
 export default function Opener(props: IProps) {
   const { openMail, data } = props;
+  const eventDate = new Date(data.eventDate);
+  const formattedDate = new Intl.DateTimeFormat("id-ID", {
+    weekday: "long", // Hari (contoh: Senin)
+    day: "numeric", // Tanggal
+    month: "long", // Nama bulan lengkap (contoh: Januari)
+    year: "numeric", // Tahun (contoh: 2024)
+    timeZone: "Asia/Jakarta", // WIB timezone
+  }).format(eventDate);
   const firstPerson = data.ladiesFirst ? data.woman.name : data.man.name;
   const secondPerson = data.ladiesFirst ? data.man.name : data.woman.name;
   return (
@@ -58,7 +66,7 @@ export default function Opener(props: IProps) {
                 <p>&</p>
                 <p>{secondPerson}</p>
               </div>
-              <p className="font-fancy2 pt-2">{data.eventDate}</p>
+              <p className="font-fancy2 pt-2">{formattedDate}</p>
             </div>
             <button
               onClick={openMail}

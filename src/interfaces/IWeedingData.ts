@@ -37,6 +37,7 @@ export interface IWeddingData {
   ladiesFirst: boolean;
   img: string;
   eventDate: string;
+  music: string;
   man: {
     name: string;
     fullName: string;
