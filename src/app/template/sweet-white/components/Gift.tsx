@@ -20,7 +20,7 @@ export default function Gift(props: IProps) {
         </div>
       </div>
       <div className="flex justify-center items-center flex-wrap gap-x-10 gap-y-10 mt-20">
-        {data.gift.map((item, i) => (
+        {data.gift?.map((item, i) => (
           <div
             key={i}
             className="relative w-[374px] h-[225px] rounded-2xl bg-contain bg-no-repeat bg-[url('/pink-one/card.png')] bg-pinky"
@@ -40,7 +40,7 @@ export default function Gift(props: IProps) {
       </div>
 
       <div className="flex justify-center items-center flex-wrap gap-x-10 gap-y-10 mt-20">
-        {data.stuffGift.map((data, i) => (
+        {data.stuffGift?.map((data, i) => (
           <div
             key={i}
             className="relative p-3 w-[374px] rounded-2xl bg-white bg-[url('/pink-one/pinkBg.jpg')] bg-cover bg-center drop-shadow-md"
