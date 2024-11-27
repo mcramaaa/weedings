@@ -27,7 +27,10 @@ export default function Profile(props: IProps) {
         </div>
       </div>
       <div className="font-fancy2 mt-5">
-        <p className="text-center text-white px-10 text-xs lg:text-lg md:mx-40">
+        <p className="text-center text-white px-10 w-full font-dancing text-2xl lg:text-lg md:mx-40">
+          Assalamualaikum Wr.Wb
+        </p>
+        <p className="text-center text-white px-10 text-xs lg:text-lg md:mx-40 mt-2">
           Tanpa mengurangi rasa hormat, kami bermaksud mengundang
           Bapak/Ibu/Saudara/I untuk menghadiri acara pernikahan kami
         </p>
@@ -83,7 +86,7 @@ export default function Profile(props: IProps) {
               <p className="text-white">
                 {ladiesFirst ? "Mempelai  Pria" : "Mempelai Wanita"}
               </p>
-              <p className="font-dancing text-2xl lg:text-4xl text-wrap">
+              <p className="font-dancing text-3xl lg:text-4xl text-wrap">
                 {secondPerson.fullName}
               </p>
               <div className="border-y border-javanese py-3">

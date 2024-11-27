@@ -51,10 +51,12 @@ export default function Event(props: IProps) {
                   {event.day}
                 </p>
                 <p className="text-javanese-secondary font-bold text-6xl border-b border-javanese text-center w-1/3">
-                  {event.date.split(" ")[0]}
+                  {event?.date?.split(" ")[0]}
                 </p>
                 <p className=" font-dancing text-2xl">
-                  {event.date.split(" ")[1] + " " + event.date.split(" ")[2]}
+                  {event?.date?.split(" ")[1] +
+                    " " +
+                    event?.date?.split(" ")[2]}
                 </p>
                 <p className="text-javanese-secondary text-xl mt-2">
                   Pukul {event.time}
@@ -63,14 +65,16 @@ export default function Event(props: IProps) {
                   {event.placeName}
                 </p>
                 <p className="text-center mt-2">{event.address}</p>
-                <Link
-                  href={event.locations}
-                  target="_blank"
-                  className="py-1 mt-5 hover:scale-110 rounded-xl duration-300 flex items-center gap-2 bg-javanese text-white w-fit px-3"
-                >
-                  <FaMapLocationDot />
-                  Lokasi Acara
-                </Link>
+                {event.locations && (
+                  <Link
+                    href={event.locations}
+                    target="_blank"
+                    className="py-1 mt-5 hover:scale-110 rounded-xl duration-300 flex items-center gap-2 bg-javanese text-white w-fit px-3"
+                  >
+                    <FaMapLocationDot />
+                    Lokasi Acara
+                  </Link>
+                )}
               </div>
             </div>
           </div>

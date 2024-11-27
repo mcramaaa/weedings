@@ -1,12 +1,12 @@
 interface IEvent {
-  tittle: string;
-  description: string;
-  day: string;
-  date: string;
-  time: string;
-  placeName: string;
-  address: string;
-  locations: string;
+  tittle?: string;
+  description?: string;
+  day?: string;
+  date?: string;
+  time?: string;
+  placeName?: string;
+  address?: string;
+  locations?: string;
 }
 
 interface IStuffGift {
@@ -60,6 +60,6 @@ export interface IWeddingData {
   };
   loveStory?: ILoveStory[];
   event: IEvent[];
-  gift: IGift[];
-  stuffGift: IStuffGift[];
+  gift?: IGift[];
+  stuffGift?: IStuffGift[];
 }
