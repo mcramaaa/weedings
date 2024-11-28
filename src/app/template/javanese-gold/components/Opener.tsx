@@ -1,3 +1,5 @@
+"use client";
+
 import { IWeddingData } from "@/interfaces/IWeedingData";
 import Image from "next/image";
 import React from "react";
@@ -10,7 +12,7 @@ interface IProps {
 }
 
 export default function Opener(props: IProps) {
-  const { openMail, to, data } = props;
+  const { openMail, data, to } = props;
   const eventDate = new Date(data.eventDate);
   const formattedDate = new Intl.DateTimeFormat("id-ID", {
     weekday: "long", // Hari (contoh: Senin)
@@ -62,14 +64,14 @@ export default function Opener(props: IProps) {
               />
             </div>
             <div className="flex flex-col items-center mt-10">
-              <div className="font-dancing2 text-center gap-3 pb-10 text-4xl flex">
+              <div className="font-dancing2 text-center gap-3 pb-3 text-5xl flex">
                 <p>{firstPerson}</p>
                 <p>&</p>
                 <p>{secondPerson}</p>
               </div>
-              <p className="font-fancy2 pt-2">{formattedDate}</p>
+              <p className="font-fancy2">{formattedDate}</p>
             </div>
-            <div className="flex font-fancy2 mt-3 flex-col items-center">
+            <div className="flex font-fancy2 mt-8 flex-col items-center">
               <p className="">Kepada Yth :</p>
               <p className="font-bold bg-white/20 mt-1 px-4 rounded-full">
                 {to}
@@ -77,7 +79,7 @@ export default function Opener(props: IProps) {
             </div>
             <button
               onClick={openMail}
-              className="bg-white my-5 text-black flex items-center gap-2 px-4 py-1 rounded-lg"
+              className="bg-white mt-8 mb-5 text-black flex items-center gap-2 px-4 py-1 rounded-lg"
             >
               <FiMail />
               Buka undangan

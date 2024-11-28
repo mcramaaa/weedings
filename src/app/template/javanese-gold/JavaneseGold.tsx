@@ -13,28 +13,24 @@ import Navbar from "./components/Navbar";
 import { useSection } from "@/hooks/zustand/useNav";
 import Closing from "./components/Closing";
 import FooterInvitation from "@/components/FooterInvitation";
-import { useSearchParams } from "next/navigation";
 
 interface IProps {
-  to?: string;
+  pageParams?: any;
   conditions?: unknown;
   data: IWeddingData;
 }
 
 export default function JavaneseGold(props: IProps) {
-  const param = useSearchParams().get("to");
-  const to = param?.replace(/_/g, " ");
   const [isOpen, setIsOpen] = useState(false);
   const [isHide, setIsHide] = useState(false);
-  const { data } = props;
+  const { data, pageParams } = props;
+  const to = pageParams?.searchParams?.to?.replace(/_/g, " ");
 
   const { section } = useSection();
 
   const scrollToSection = (id: string) => {
     if (id === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
-      // } else if (id === "contact") {
-      //   window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
     } else {
       const element = document.getElementById(id);
       element?.scrollIntoView({ behavior: "smooth" });
