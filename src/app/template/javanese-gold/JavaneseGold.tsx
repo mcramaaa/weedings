@@ -24,7 +24,7 @@ export default function JavaneseGold(props: IProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isHide, setIsHide] = useState(false);
   const { data, pageParams } = props;
-  const to = pageParams.searchParams.to.replace(/_/g, " ");
+  const to = pageParams?.searchParams?.to?.replace(/_/g, " ");
 
   const { section } = useSection();
 
