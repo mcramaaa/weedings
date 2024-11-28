@@ -4,7 +4,7 @@ module.exports = {
       name: "wedding-landing",
       script: "yarn",
       args: "start",
-      cwd: "/var/www/wedding/weddings",
+      cwd: "/var/www/wedding/weedings",
       instances: 1,
       autorestart: true,
       watch: false,
