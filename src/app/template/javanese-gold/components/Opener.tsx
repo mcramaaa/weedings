@@ -1,3 +1,5 @@
+"use client";
+
 import { IWeddingData } from "@/interfaces/IWeedingData";
 import Image from "next/image";
 import React from "react";
@@ -10,7 +12,7 @@ interface IProps {
 }
 
 export default function Opener(props: IProps) {
-  const { openMail, to, data } = props;
+  const { openMail, data, to } = props;
   const eventDate = new Date(data.eventDate);
   const formattedDate = new Intl.DateTimeFormat("id-ID", {
     weekday: "long", // Hari (contoh: Senin)

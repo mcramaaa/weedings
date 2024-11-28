@@ -3,11 +3,11 @@ import JavaneseGold from "../template/javanese-gold/JavaneseGold";
 import { ristaAkbar } from "./data.constant";
 import PageLayout from "./layout";
 
-export default function Page() {
+export default async function Page(props: any) {
   return (
     <>
       <PageLayout>
-        <JavaneseGold data={ristaAkbar} />
+        <JavaneseGold data={ristaAkbar} pageParams={props} />
       </PageLayout>
     </>
   );
