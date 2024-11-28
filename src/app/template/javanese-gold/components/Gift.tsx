@@ -1,6 +1,8 @@
+import { useLayout } from "@/hooks/zustand/layout";
 import { IWeddingData } from "@/interfaces/IWeedingData";
 import Link from "next/link";
 import React from "react";
+import { FaRegCopy } from "react-icons/fa";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { TfiGift } from "react-icons/tfi";
 
@@ -9,6 +11,19 @@ interface IProps {
 }
 export default function Gift(props: IProps) {
   const { data } = props;
+  const { setError, setIsSuccess } = useLayout();
+
+  const handleCopyId = (id: string) => {
+    navigator.clipboard
+      .writeText(id)
+      .then(() => {
+        setIsSuccess(true, "Berhasil salin rekening");
+      })
+      .catch(() => {
+        setError(true, "Gagal salin rekening");
+      });
+  };
+
   return (
     <div className="mt-16">
       <div className="flex justify-center">
@@ -32,7 +47,11 @@ export default function Gift(props: IProps) {
               {item.accountNumber}
             </p>
             <p className="absolute bottom-6 left-6 font-bold">{item.name}</p>
-            <button className="absolute bg-javanese text-white px-2 rounded-lg hover:scale-110 duration-500 font-bold right-4 bottom-[66px]">
+            <button
+              onClick={() => handleCopyId(item.accountNumber)}
+              className="absolute flex items-center gap-2 bg-javanese text-white px-2 rounded-lg hover:scale-110 duration-500 font-bold right-4 bottom-[66px]"
+            >
+              <FaRegCopy />
               Salin Nomor
             </button>
           </div>

@@ -33,6 +33,7 @@ export default function Closing(props: IProps) {
           <p>{secondPerson}</p>
         </div>
       </div>
+      <div className="bg-gradient-to-b from-white/0 to-white h-20"></div>
     </div>
   );
 }
