@@ -13,6 +13,7 @@ import Navbar from "./components/Navbar";
 import { useSection } from "@/hooks/zustand/useNav";
 import Closing from "./components/Closing";
 import FooterInvitation from "@/components/FooterInvitation";
+import { useSearchParams } from "next/navigation";
 
 interface IProps {
   to?: string;
@@ -21,6 +22,8 @@ interface IProps {
 }
 
 export default function JavaneseGold(props: IProps) {
+  const param = useSearchParams().get("to");
+  const to = param?.replace(/_/g, " ");
   const [isOpen, setIsOpen] = useState(false);
   const [isHide, setIsHide] = useState(false);
   const { data } = props;
@@ -82,7 +85,7 @@ export default function JavaneseGold(props: IProps) {
               isOpen ? "-translate-y-full" : "translate-y-0"
             } ${isHide && "hidden"}`}
           >
-            <Opener data={data} openMail={() => setIsOpen(true)} />
+            <Opener data={data} to={to} openMail={() => setIsOpen(true)} />
           </div>
           <div id="home"></div>
           <Hero data={data} />

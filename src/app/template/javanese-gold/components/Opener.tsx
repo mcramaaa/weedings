@@ -6,10 +6,11 @@ import { FiMail } from "react-icons/fi";
 interface IProps {
   openMail: () => void;
   data: IWeddingData;
+  to?: string;
 }
 
 export default function Opener(props: IProps) {
-  const { openMail, data } = props;
+  const { openMail, to, data } = props;
   const eventDate = new Date(data.eventDate);
   const formattedDate = new Intl.DateTimeFormat("id-ID", {
     weekday: "long", // Hari (contoh: Senin)
@@ -67,6 +68,12 @@ export default function Opener(props: IProps) {
                 <p>{secondPerson}</p>
               </div>
               <p className="font-fancy2 pt-2">{formattedDate}</p>
+            </div>
+            <div className="flex font-fancy2 mt-3 flex-col items-center">
+              <p className="">Kepada Yth :</p>
+              <p className="font-bold bg-white/20 mt-1 px-4 rounded-full">
+                {to}
+              </p>
             </div>
             <button
               onClick={openMail}
