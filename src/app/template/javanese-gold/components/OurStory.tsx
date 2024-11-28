@@ -14,10 +14,10 @@ export default function OurStory(props: Iprops) {
           src={"/javanese-gold/ourStory.png"}
           alt=""
           fill
-          className="object-contain object-center"
+          className="object-contain object-center animate-updown"
         />
       </div>
-      <div className="relative w-full h-full bg-white overflow-hidden">
+      <div className="relative w-full h-full bg-white mt-5 overflow-hidden">
         <div className="relative aspect-[10/2] scale-105 flex justify-center">
           <Image
             src={"/javanese-gold/roundFrame.svg"}

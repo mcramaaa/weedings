@@ -63,7 +63,7 @@ export const ristaAkbar: IWeddingData = {
         "Dengan penuh rasa syukur acara resepsi pernikahan yang diselenggarakan di kediaman mempelai wanita",
       day: "Minggu",
       date: "8 Desember 2024",
-      time: "18.00 WIB - Selesai",
+      time: "18.00 WIB - 21.00 WIB",
       placeName: "Kediaman Mempelai Wanita",
       address:
         "Jl.keputih GG. Makam city home blok E3 timur, Keputih, Kec. Sukolilo, Surabaya",

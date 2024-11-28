@@ -50,19 +50,19 @@ export default function Countdown(props: IProps) {
   return (
     <div className="flex justify-center w-full gap-4">
       <div className="h-16 w-16 flex flex-col justify-center items-center drop-shadow-md bg-white rounded-lg">
-        <p className="text-2xl">{timeLeft.days}</p>
+        <p className="text-2xl font-dancing">{timeLeft.days}</p>
         <p className="text-xs">Hari</p>
       </div>
       <div className="h-16 w-16 flex flex-col justify-center items-center drop-shadow-md bg-white rounded-lg">
-        <p className="text-2xl">{timeLeft.hours}</p>
+        <p className="text-2xl font-dancing">{timeLeft.hours}</p>
         <p className="text-xs">Jam</p>
       </div>
       <div className="h-16 w-16 flex flex-col justify-center items-center drop-shadow-md bg-white rounded-lg">
-        <p className="text-2xl">{timeLeft.minutes}</p>
+        <p className="text-2xl font-dancing">{timeLeft.minutes}</p>
         <p className="text-xs">Menit</p>
       </div>
       <div className="h-16 w-16 flex flex-col justify-center items-center drop-shadow-md bg-white rounded-lg">
-        <p className="text-2xl">{timeLeft.seconds}</p>
+        <p className="text-2xl font-dancing">{timeLeft.seconds}</p>
         <p className="text-xs">Detik</p>
       </div>
     </div>

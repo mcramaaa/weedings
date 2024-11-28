@@ -14,9 +14,9 @@ export default function Profile(props: IProps) {
   const secondPerson = ladiesFirst ? data.man : data.woman;
 
   return (
-    <div className="relative overflow-x-hidden pb-28">
+    <div className="relative overflow-hidden pb-28 pt-10">
       <div className="flex flex-col mt-6 items-center">
-        <div className="relative aspect-[3/2] w-52">
+        <div className="relative aspect-[3/2] w-52 animate-updown">
           <Image
             src={"/javanese-gold/ourWeeding.png"}
             alt=""
@@ -37,12 +37,17 @@ export default function Profile(props: IProps) {
         <div className="grid pt-10 lg:grid-cols-9 text-sm lg:text-lg lg:mx-20">
           {/* Bagian untuk First Person */}
           <div className="grid relative grid-cols-2 lg:grid-cols-3 lg:col-span-4">
-            <Image
-              src={"/javanese-gold/batikBckR.svg"}
-              alt=""
-              fill
-              className="object-contain object-center -translate-x-1/2 scale-150 opacity-25"
-            />
+            <div className="absolute w-full scale-150  left-0 -translate-x-1/2">
+              <div className="relative w-full h-full aspect-square">
+                <Image
+                  src={"/javanese-gold/batikBckR.svg"}
+                  alt=""
+                  fill
+                  className="object-contain object-center animate-smallrotate opacity-25"
+                />
+              </div>
+            </div>
+
             <div className="flex justify-center">
               <div className="relative aspect-[1/2] overflow-hidden w-52">
                 <Image
@@ -76,12 +81,17 @@ export default function Profile(props: IProps) {
 
           {/* Bagian untuk Second Person */}
           <div className="grid grid-cols-2 lg:grid-cols-3 lg:col-span-4 h-fit relative">
-            <Image
-              src={"/javanese-gold/batikBckL.svg"}
-              alt=""
-              fill
-              className="object-contain object-center translate-x-1/2 scale-150 opacity-25"
-            />
+            <div className="absolute w-full scale-150  left-0 translate-x-1/2">
+              <div className="relative w-full h-full aspect-square">
+                <Image
+                  src={"/javanese-gold/batikBckL.svg"}
+                  alt=""
+                  fill
+                  className="object-contain object-center animate-smallrotate opacity-25"
+                />
+              </div>
+            </div>
+
             <div className="flex text-center text-javanese-white p-4 lg:col-span-2 justify-center gap-y-3 flex-col">
               <p className="text-white">
                 {ladiesFirst ? "Mempelai  Pria" : "Mempelai Wanita"}

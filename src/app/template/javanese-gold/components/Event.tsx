@@ -11,9 +11,20 @@ interface IProps {
 export default function Event(props: IProps) {
   const { data } = props;
   return (
-    <div className="mt-10">
+    <div className="mt-10 relative overflow-hidden flex flex-col items-center justify-center">
+      <div className="absolute w-full scale-150">
+        <div className="relative w-full h-full aspect-square scale-150">
+          <Image
+            src={"/javanese-gold/batikBckR.svg"}
+            alt=""
+            fill
+            className="object-contain object-center animate-smallbig opacity-10"
+          />
+        </div>
+      </div>
+
       <div className="from-white/0 grid place-items-center">
-        <div className="relative aspect-[3/1] w-72 overflow-hidden">
+        <div className="relative aspect-[3/1] w-72 animate-smallbig overflow-hidden">
           <Image
             src={"/pink-one/saveDate.png"}
             alt=""
@@ -23,7 +34,7 @@ export default function Event(props: IProps) {
           />
         </div>
       </div>
-      <div className="pb-10 px-5">
+      <div className="pb-10 px-5 mt-3">
         <p className="text-center text-white text-sm px-5 lg:text-lg md:mx-40">
           Kami sangat berharap Bapak/Ibu/Saudara/i dapat menghadiri rangkaian
           acara.

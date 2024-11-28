@@ -79,9 +79,9 @@ export default function Comment() {
   } = useComment();
 
   return (
-    <div className="text-white mt-10 bg-[url(/javanese-gold/batikBckR.svg)] bg-contain bg-center">
+    <div className="text-white my-10 bg-[url(/javanese-gold/batikBckR.svg)] bg-contain bg-center">
       <div className="bg-gradient-to-b from-black to-black/70 h-10"></div>
-      <div className="bg-black/70 p-6">
+      <div className="bg-black/70 px-6">
         <p>Wedding Wish</p>
         <div className="bg-white/10 flex flex-col gap-4 p-4 backdrop-blur-sm text-black text-sm rounded-lg bg">
           <form
@@ -244,6 +244,7 @@ export default function Comment() {
             ))}
         </div>
       </div>
+      <div className="bg-gradient-to-b from-black/50 to-black h-24"></div>
     </div>
   );
 }
