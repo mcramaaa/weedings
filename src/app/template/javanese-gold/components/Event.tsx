@@ -25,7 +25,10 @@ export default function Event(props: IProps) {
       </div>
 
       <div className="from-white/0 grid place-items-center">
-        <div className="relative aspect-[3/1] w-72 animate-smallbig overflow-hidden">
+        <AnimatedCard
+          animationType="scale"
+          className="relative aspect-[3/1] w-72 animate-smallbig overflow-hidden"
+        >
           <Image
             src={"/pink-one/saveDate.png"}
             alt=""
@@ -33,13 +36,16 @@ export default function Event(props: IProps) {
             quality={100}
             className="object-cover object-center"
           />
-        </div>
+        </AnimatedCard>
       </div>
       <div className="pb-10 px-5 mt-3">
-        <p className="text-center text-white text-sm px-5 lg:text-lg md:mx-40">
+        <AnimatedCard
+          animationType="scale"
+          className="text-center text-white text-sm px-5 lg:text-lg md:mx-40"
+        >
           Kami sangat berharap Bapak/Ibu/Saudara/i dapat menghadiri rangkaian
           acara.
-        </p>
+        </AnimatedCard>
         {/* <p className="text-center text-sm lg:text-lg md:mx-40">
           Hormat Kami Yang Berbahagia Kel. Bapak Moh Umar & Ibu Lusi Agustina
           Kel. Bapak Achmad Saechoni & Ibu Sri Harcicik
@@ -49,7 +55,7 @@ export default function Event(props: IProps) {
       {/* AKAD */}
       <div className="flex flex-wrap gap-y-10 gap-x-4 justify-center items-center">
         {data.event.map((event, i) => (
-          <AnimatedCard key={i} isRigt={i % 2 === 0 ? true : false}>
+          <AnimatedCard animationType="slide" key={i} toLeft={i % 2 === 0}>
             <div className="px-5 text-sm w-[370px] font-fancy2 drop-shadow-lg">
               <div className="relative p-4 text-white">
                 <div className="flex font-bold border-b pb-2 text-lg border-javanese flex-col items-center te">

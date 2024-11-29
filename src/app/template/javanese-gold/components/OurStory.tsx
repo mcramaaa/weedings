@@ -10,14 +10,18 @@ export default function OurStory(props: Iprops) {
   const { storyData } = props;
   return (
     <div className="flex flex-col items-center">
-      <div className="relative w-52 aspect-[2/1]">
+      <AnimatedCard
+        animationType="slideToBottom"
+        isFromTop
+        className="relative w-64 aspect-[2/1]"
+      >
         <Image
           src={"/javanese-gold/ourStory.png"}
           alt=""
           fill
           className="object-contain object-center animate-updown"
         />
-      </div>
+      </AnimatedCard>
       <div className="relative w-full h-full bg-white mt-5 overflow-hidden">
         <div className="relative aspect-[10/2] scale-105 flex justify-center">
           <Image
@@ -30,7 +34,7 @@ export default function OurStory(props: Iprops) {
         <div className=" bg-[url(/javanese-gold/batikBckR.svg)] bg-transparent bg-cover md:bg-contain bg-opacity-85 bg-no-repeat w-full bg-center">
           <div className="bg-white/85 p-4 flex flex-col md:justify-center items-center md:items-start md:px-32 w-full md:flex-row md:flex-wrap gap-10">
             {storyData.map((data, i) => (
-              <AnimatedCard key={i} isRigt={i % 2 === 0 ? true : false}>
+              <AnimatedCard animationType="slide" key={i} toLeft={i % 2 === 0}>
                 <div
                   key={i}
                   className="flex flex-col items-center lg:w-[360px]"
