@@ -13,7 +13,7 @@ export default function FooterInvitation() {
             src={"/footerUpFrame.svg"}
             alt=""
             fill
-            className="object-contain"
+            className="object-cover"
           />
         </div>
         <div className="w-full bg-white pb-5">

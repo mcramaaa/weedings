@@ -266,7 +266,7 @@ export default function Comment() {
               ))}
           </AnimatedCard>
         </div>
-        <div className="bg-gradient-to-b from-black/50 to-black h-24"></div>
+        <div className="bg-gradient-to-b from-black/70 to-black h-24"></div>
       </div>
     </div>
   );
