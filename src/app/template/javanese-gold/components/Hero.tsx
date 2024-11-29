@@ -39,7 +39,7 @@ export default function Hero(props: IProps) {
       </div>
       <div className="w-full h-full flex flex-col items-center justify-center bg-black/85">
         <div className="w-80 z-30">
-          <div className="relative -mb-1 aspect-[3/1]">
+          <div className="relative  aspect-[3/1]">
             <Image
               src={"/javanese-gold/triangle.svg"}
               alt=""
