@@ -2,6 +2,7 @@ import { IWeddingData } from "@/interfaces/IWeedingData";
 import Image from "next/image";
 import React from "react";
 import Countdown from "../../sweet-white/components/Countdown";
+import AnimatedCard from "@/components/motion/AnimatedCard";
 
 interface IProps {
   data: IWeddingData;
@@ -38,8 +39,8 @@ export default function Hero(props: IProps) {
         </div>
       </div>
       <div className="w-full h-full flex flex-col items-center justify-center bg-black/85">
-        <div className="w-80 z-30">
-          <div className="relative  aspect-[3/1]">
+        <AnimatedCard animationType="scale" className="w-80 z-30">
+          <div className="relative -mb-[1px] aspect-[3/1]">
             <Image
               src={"/javanese-gold/triangle.svg"}
               alt=""
@@ -102,17 +103,20 @@ export default function Hero(props: IProps) {
           <div className="flex justify-center w-full mt-10 gap-4">
             <Countdown eventDate={data.eventDate} />
           </div>
-        </div>
+        </AnimatedCard>
       </div>
       <div className="absolute flex justify-center -bottom-10 w-full">
-        <div className="relative w-full aspect-square max-w-[425px]">
+        <AnimatedCard
+          animationType="scale"
+          className="relative w-full aspect-square max-w-[425px]"
+        >
           <Image
             src={"/javanese-gold/roundBatik.svg"}
             alt=""
             fill
             className="animate-spinslow"
           />
-        </div>
+        </AnimatedCard>
       </div>
       <div className="bg-gradient-to-t from-black to-black/0 absolute bottom-0 w-full h-1/2"></div>
     </div>
