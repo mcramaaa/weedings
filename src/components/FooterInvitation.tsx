@@ -16,7 +16,7 @@ export default function FooterInvitation() {
             className="object-contain"
           />
         </div>
-        <div className="w-full bg-white">
+        <div className="w-full bg-white pb-5">
           <div className="flex justify-center pt-4 items-center gap-2 text-sm">
             <p>Made with</p> <FaHeart className="text-red-700" />
             <p>by</p>

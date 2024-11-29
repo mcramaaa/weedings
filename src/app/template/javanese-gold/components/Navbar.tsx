@@ -48,7 +48,7 @@ export default function Navbar(props: IProps) {
 
   return (
     <div className="flex justify-center">
-      <div className="p-5 duration-500 w-full lg:w-1/2 drop-shadow-md">
+      <div className="px-5 pb-4 duration-500 w-full lg:w-1/2 drop-shadow-md">
         <div className="bg-white/95 backdrop-blur-xl md:px-8 rounded-full gap-2 grid grid-flow-col p-3">
           {navItem.map((item) => (
             <button
