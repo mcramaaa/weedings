@@ -54,11 +54,11 @@ const AnimatedCard = ({
 
   return (
     <motion.div
-      ref={ref} // Hubungkan dengan useInView
+      ref={ref}
       initial="hidden"
-      animate={isInView ? "visible" : "exit"} // Jalankan animasi berdasarkan scroll
+      animate={isInView ? "visible" : "exit"}
       variants={variants}
-      className={className} // Pastikan className selalu terdefinisi
+      className={`${className}`}
     >
       {children}
     </motion.div>

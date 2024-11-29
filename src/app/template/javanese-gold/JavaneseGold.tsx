@@ -74,7 +74,6 @@ export default function JavaneseGold(props: IProps) {
   return (
     <>
       <div className={`${isOpen ? "" : "h-screen overflow-hidden "} relative`}>
-        <audio ref={audioRef} src={data.music} />
         <div className="bg-black">
           <div
             className={`z-50 absolute top-0 h-screen bg-white transition-transform duration-1000 ease-in-out ${
@@ -105,6 +104,7 @@ export default function JavaneseGold(props: IProps) {
           </div>
         )}
       </div>
+      <audio ref={audioRef} src={data.music} />
     </>
   );
 }
