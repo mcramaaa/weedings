@@ -1,3 +1,4 @@
+import AnimatedCard from "@/components/motion/AnimatedCard";
 import { IWeddingData } from "@/interfaces/IWeedingData";
 import Image from "next/image";
 import Link from "next/link";
@@ -48,47 +49,46 @@ export default function Event(props: IProps) {
       {/* AKAD */}
       <div className="flex flex-wrap gap-y-10 gap-x-4 justify-center items-center">
         {data.event.map((event, i) => (
-          <div
-            key={i}
-            className="px-5 text-sm w-[370px] font-fancy2 drop-shadow-lg"
-          >
-            <div className="relative p-4 text-white">
-              <div className="flex font-bold border-b pb-2 text-lg border-javanese flex-col items-center te">
-                <p>{event.tittle}</p>
-              </div>
-              <p className="text-center mt-2">{event.description}</p>
-              <div className="mt-5 flex flex-col items-center">
-                <p className="font-dancing border-b border-javanese font-bold w-1/3 text-3xl text-center">
-                  {event.day}
-                </p>
-                <p className="text-javanese-secondary font-bold text-6xl border-b border-javanese text-center w-1/3">
-                  {event?.date?.split(" ")[0]}
-                </p>
-                <p className=" font-dancing text-2xl">
-                  {event?.date?.split(" ")[1] +
-                    " " +
-                    event?.date?.split(" ")[2]}
-                </p>
-                <p className="text-javanese-secondary text-xl mt-2">
-                  Pukul {event.time}
-                </p>
-                <p className="text-center font-bold text-lg mt-4">
-                  {event.placeName}
-                </p>
-                <p className="text-center mt-2">{event.address}</p>
-                {event.locations && (
-                  <Link
-                    href={event.locations}
-                    target="_blank"
-                    className="py-1 mt-5 hover:scale-110 rounded-xl duration-300 flex items-center gap-2 bg-javanese text-white w-fit px-3"
-                  >
-                    <FaMapLocationDot />
-                    Lokasi Acara
-                  </Link>
-                )}
+          <AnimatedCard key={i} isRigt={i % 2 === 0 ? true : false}>
+            <div className="px-5 text-sm w-[370px] font-fancy2 drop-shadow-lg">
+              <div className="relative p-4 text-white">
+                <div className="flex font-bold border-b pb-2 text-lg border-javanese flex-col items-center te">
+                  <p>{event.tittle}</p>
+                </div>
+                <p className="text-center mt-2">{event.description}</p>
+                <div className="mt-5 flex flex-col items-center">
+                  <p className="font-dancing border-b border-javanese font-bold w-1/3 text-3xl text-center">
+                    {event.day}
+                  </p>
+                  <p className="text-javanese-secondary font-bold text-6xl border-b border-javanese text-center w-1/3">
+                    {event?.date?.split(" ")[0]}
+                  </p>
+                  <p className=" font-dancing text-2xl">
+                    {event?.date?.split(" ")[1] +
+                      " " +
+                      event?.date?.split(" ")[2]}
+                  </p>
+                  <p className="text-javanese-secondary text-xl mt-2">
+                    Pukul {event.time}
+                  </p>
+                  <p className="text-center font-bold text-lg mt-4">
+                    {event.placeName}
+                  </p>
+                  <p className="text-center mt-2">{event.address}</p>
+                  {event.locations && (
+                    <Link
+                      href={event.locations}
+                      target="_blank"
+                      className="py-1 mt-5 hover:scale-110 rounded-xl duration-300 flex items-center gap-2 bg-javanese text-white w-fit px-3"
+                    >
+                      <FaMapLocationDot />
+                      Lokasi Acara
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
+          </AnimatedCard>
         ))}
       </div>
     </div>

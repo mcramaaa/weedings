@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { IWeddingData } from "@/interfaces/IWeedingData";
+import AnimatedCard from "@/components/motion/AnimatedCard";
 
 interface IProps {
   data: IWeddingData;
@@ -47,32 +48,36 @@ export default function Profile(props: IProps) {
                 />
               </div>
             </div>
+            <AnimatedCard isRigt={false}>
+              <div className="flex justify-center">
+                <div className="relative aspect-[1/2] overflow-hidden w-52">
+                  <Image
+                    src={firstPerson.img}
+                    alt=""
+                    fill
+                    className="object-contain object-center"
+                    quality={100}
+                  />
+                </div>
+              </div>
+            </AnimatedCard>
 
-            <div className="flex justify-center">
-              <div className="relative aspect-[1/2] overflow-hidden w-52">
-                <Image
-                  src={firstPerson.img}
-                  alt=""
-                  fill
-                  className="object-contain object-center"
-                  quality={100}
-                />
-              </div>
-            </div>
-            <div className="lg:order-first flex text-javanese-white text-center lg:col-span-2 p-4 gap-y-3 justify-center flex-col">
-              <p className="text-white">
-                {ladiesFirst ? "Mempelai Wanita" : "Mempelai Pria"}
-              </p>
-              <p className="font-dancing text-3xl lg:text-4xl text-wrap">
-                {firstPerson.fullName}
-              </p>
-              <div className="border-y border-javanese py-3">
-                <p className="font-bold text-white">{firstPerson.anak}</p>
-                <p>
-                  {firstPerson.bapak} & {firstPerson.ibu}
+            <AnimatedCard isRigt={true}>
+              <div className="lg:order-first flex text-javanese-white text-center lg:col-span-2 p-4 gap-y-3 justify-center flex-col">
+                <p className="text-white">
+                  {ladiesFirst ? "Mempelai Wanita" : "Mempelai Pria"}
                 </p>
+                <p className="font-dancing text-3xl lg:text-4xl text-wrap">
+                  {firstPerson.fullName}
+                </p>
+                <div className="border-y border-javanese py-3">
+                  <p className="font-bold text-white">{firstPerson.anak}</p>
+                  <p>
+                    {firstPerson.bapak} & {firstPerson.ibu}
+                  </p>
+                </div>
               </div>
-            </div>
+            </AnimatedCard>
           </div>
 
           <div className="grid place-items-center w-full text-8xl text-javanese-secondary font-dancing">
@@ -92,30 +97,34 @@ export default function Profile(props: IProps) {
               </div>
             </div>
 
-            <div className="flex text-center text-javanese-white p-4 lg:col-span-2 justify-center gap-y-3 flex-col">
-              <p className="text-white">
-                {ladiesFirst ? "Mempelai  Pria" : "Mempelai Wanita"}
-              </p>
-              <p className="font-dancing text-3xl lg:text-4xl text-wrap">
-                {secondPerson.fullName}
-              </p>
-              <div className="border-y border-javanese py-3">
-                <p className="font-bold text-white">{secondPerson.anak}</p>
-                <p>
-                  {secondPerson.bapak} & {secondPerson.ibu}
+            <AnimatedCard isRigt={false}>
+              <div className="flex text-center text-javanese-white p-4 lg:col-span-2 justify-center gap-y-3 flex-col">
+                <p className="text-white">
+                  {ladiesFirst ? "Mempelai  Pria" : "Mempelai Wanita"}
                 </p>
+                <p className="font-dancing text-3xl lg:text-4xl text-wrap">
+                  {secondPerson.fullName}
+                </p>
+                <div className="border-y border-javanese py-3">
+                  <p className="font-bold text-white">{secondPerson.anak}</p>
+                  <p>
+                    {secondPerson.bapak} & {secondPerson.ibu}
+                  </p>
+                </div>
               </div>
-            </div>
+            </AnimatedCard>
             <div className="flex lg:order-first justify-center">
-              <div className="relative aspect-[1/2] w-52">
-                <Image
-                  src={secondPerson.img}
-                  alt=""
-                  fill
-                  className="object-contain object-center"
-                  quality={100}
-                />
-              </div>
+              <AnimatedCard isRigt>
+                <div className="relative aspect-[1/2] w-52">
+                  <Image
+                    src={secondPerson.img}
+                    alt=""
+                    fill
+                    className="object-contain object-center"
+                    quality={100}
+                  />
+                </div>
+              </AnimatedCard>
             </div>
           </div>
         </div>

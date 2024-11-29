@@ -1,3 +1,4 @@
+import AnimatedCard from "@/components/motion/AnimatedCard";
 import Image from "next/image";
 import React from "react";
 
@@ -29,26 +30,33 @@ export default function OurStory(props: Iprops) {
         <div className=" bg-[url(/javanese-gold/batikBckR.svg)] bg-transparent bg-cover md:bg-contain bg-opacity-85 bg-no-repeat w-full bg-center">
           <div className="bg-white/85 p-4 flex flex-col md:justify-center items-center md:items-start md:px-32 w-full md:flex-row md:flex-wrap gap-10">
             {storyData.map((data, i) => (
-              <div key={i} className="flex flex-col items-center lg:w-[360px]">
-                <div className="flex items-center bg-black px-4 py-1 rounded-full gap-2 text-white font-bold">
-                  <div className="aspect-square w-5 rotate-90 relative">
-                    <Image
-                      src={"/javanese-gold/borderBottom.svg"}
-                      alt=""
-                      fill
-                    />
+              <AnimatedCard key={i} isRigt={i % 2 === 0 ? true : false}>
+                <div
+                  key={i}
+                  className="flex flex-col items-center lg:w-[360px]"
+                >
+                  <div className="flex items-center bg-black px-4 py-1 rounded-full gap-2 text-white font-bold">
+                    <div className="aspect-square w-5 rotate-90 relative">
+                      <Image
+                        src={"/javanese-gold/borderBottom.svg"}
+                        alt=""
+                        fill
+                      />
+                    </div>
+                    <p>{data.label}</p>
+                    <div className="aspect-square w-5 -rotate-90 relative">
+                      <Image
+                        src={"/javanese-gold/borderBottom.svg"}
+                        alt=""
+                        fill
+                      />
+                    </div>
                   </div>
-                  <p>{data.label}</p>
-                  <div className="aspect-square w-5 -rotate-90 relative">
-                    <Image
-                      src={"/javanese-gold/borderBottom.svg"}
-                      alt=""
-                      fill
-                    />
-                  </div>
+                  <p className="text-sm mt-3 text-justify">
+                    {data.description}
+                  </p>
                 </div>
-                <p className="text-sm mt-3 text-justify">{data.description}</p>
-              </div>
+              </AnimatedCard>
             ))}
           </div>
         </div>
