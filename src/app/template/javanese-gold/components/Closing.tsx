@@ -12,11 +12,10 @@ export default function Closing(props: IProps) {
   return (
     <div className="text-white">
       <p className="font-dancing text-center text-3xl">
-        Wassalamu&apos;alaikum
+        Wassalamu&apos;alaikum Wr.Wb
       </p>
-      <p className="font-dancing text-center text-3xl">
-        Warahmatullahi wabarakatuh
-      </p>
+      {/* <p className="font-dancing text-center text-3xl">
+      </p> */}
       <div className="flex justify-center items-center mt-3 w-full gap-2">
         <div className="h-[2px] w-full bg-gradient-to-l from-white to-white/0 "></div>
         <p className="font-fancy2 text-nowrap w-fit text-javanese-secondary text-center ">
@@ -26,7 +25,7 @@ export default function Closing(props: IProps) {
       </div>
       <p className="font-dancing text-center text-3xl mt-1">Terimakasih</p>
       <div className="flex font-fancy2 flex-col items-center mt-10">
-        <p>hormat kami</p>
+        <p>Hormat kami,</p>
         <div className="font-dancing mt-3 text-center gap-3 pb-10 text-4xl flex">
           <p>{firstPerson}</p>
           <p className="text-javanese-secondary">&</p>
