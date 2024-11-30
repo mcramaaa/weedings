@@ -3,7 +3,6 @@ import React, { ChangeEvent } from "react";
 import useComment from "../hooks/useComment";
 import { formatDistanceToNow } from "date-fns";
 import { id as localeID } from "date-fns/locale";
-import { convertDate } from "@/helper/converDate";
 import { FaReply } from "react-icons/fa";
 import { IReplies } from "@/interfaces/IComments";
 import dayjs from "dayjs";
@@ -162,13 +161,10 @@ export default function Comment() {
                             <p className="font-bold w-fit">{comment.name}</p>
                             {comment.createdAt && (
                               <p className="text-xs text-slate-500 mt-[3px] w-fit">
-                                {formatDistanceToNow(
-                                  convertDate(comment.createdAt),
-                                  {
-                                    addSuffix: true,
-                                    locale: localeID,
-                                  }
-                                )}
+                                {formatDistanceToNow(comment.createdAt, {
+                                  addSuffix: true,
+                                  locale: localeID,
+                                })}
                               </p>
                             )}
                           </div>
