@@ -12,9 +12,9 @@ interface IProps {
 export default function Event(props: IProps) {
   const { data } = props;
   return (
-    <div className="mt-10 relative overflow-hidden flex flex-col items-center justify-center">
-      <div className="absolute w-full scale-150">
-        <div className="relative w-full h-full aspect-square scale-150">
+    <div className="mt-10 relative pb-20 overflow-hidden flex flex-col items-center justify-center">
+      <div className="absolute w-full md:w-1/2">
+        <div className="relative aspect-square scale-150 md:scale-100">
           <Image
             src={"/javanese-gold/batikBckR.svg"}
             alt=""
@@ -23,8 +23,9 @@ export default function Event(props: IProps) {
           />
         </div>
       </div>
+      <div className="hidden lg:block absolute top-0 w-full bg-gradient-to-b from-black h-24 text-white"></div>
 
-      <div className="from-white/0 grid place-items-center">
+      <div className="grid place-items-center">
         <AnimatedCard
           animationType="scale"
           className="relative aspect-[3/1] w-72 animate-smallbig overflow-hidden"
@@ -53,7 +54,7 @@ export default function Event(props: IProps) {
       </div>
 
       {/* AKAD */}
-      <div className="flex flex-wrap gap-y-10 gap-x-4 justify-center items-center">
+      <div className="flex flex-wrap gap-y-10 gap-x-4 justify-center items-start">
         {data.event.map((event, i) => (
           <AnimatedCard animationType="slide" key={i} toLeft={i % 2 === 0}>
             <div className="px-5 text-sm w-[370px] font-fancy2 drop-shadow-lg">
@@ -97,6 +98,7 @@ export default function Event(props: IProps) {
           </AnimatedCard>
         ))}
       </div>
+      <div className="hidden lg:block absolute bottom-0 w-full bg-gradient-to-b from-black/0 to-black h-24 text-white"></div>
     </div>
   );
 }

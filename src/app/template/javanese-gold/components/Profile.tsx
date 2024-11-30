@@ -33,7 +33,7 @@ export default function Profile(props: IProps) {
       </AnimatedCard>
       <div className="font-fancy2 mt-5">
         <AnimatedCard animationType="scale">
-          <p className="text-center text-white px-10 w-full font-dancing text-2xl lg:text-lg">
+          <p className="text-center text-white px-10 w-full font-dancing text-2xl lg:text-3xl">
             Assalamualaikum Wr.Wb
           </p>
           <p className="text-center text-white px-10 text-xs lg:text-lg md:mx-40 mt-2">
@@ -41,11 +41,11 @@ export default function Profile(props: IProps) {
             Bapak/Ibu/Saudara/I untuk menghadiri acara pernikahan kami
           </p>
         </AnimatedCard>
-        <div className="grid pt-10 lg:grid-cols-9 text-sm lg:text-lg lg:mx-20">
+        <div className="grid pt-10 w-full lg:grid-cols-9 lg:px-20">
           {/* Bagian untuk First Person */}
-          <div className="relative">
-            <div className="absolute w-1/2 scale-150  left-0 -translate-x-1/2">
-              <div className="relative justify-center  aspect-square">
+          <div className="relative w-full flex items-center justify-center lg:col-span-4">
+            <div className="absolute flex justify-center h-1/2 w-1/2 scale-150 left-0 -translate-x-1/2">
+              <div className="relative max-w-64 scale-150 aspect-square">
                 <Image
                   src={"/javanese-gold/batikBckR.svg"}
                   alt=""
@@ -54,7 +54,8 @@ export default function Profile(props: IProps) {
                 />
               </div>
             </div>
-            <AnimatedCard animationType="slide" className="grid-cols-2 grid">
+            <AnimatedCard animationType="slide" className="grid grid-cols-2">
+              {/* <div className="grid grid-cols-2"> */}
               <div className="flex w-full justify-center">
                 <div className="relative aspect-[1/2] overflow-hidden w-52">
                   <Image
@@ -67,20 +68,21 @@ export default function Profile(props: IProps) {
                 </div>
               </div>
 
-              <div className="lg:order-first flex text-javanese-white text-center lg:col-span-2 p-4 gap-y-3 justify-center flex-col">
+              <div className="lg:order-first flex text-javanese-white text-center p-4 gap-y-3 justify-center flex-col">
                 <p className="text-white">
                   {ladiesFirst ? "Mempelai Wanita" : "Mempelai Pria"}
                 </p>
-                <p className="font-dancing text-3xl lg:text-4xl text-wrap">
+                <p className="font-dancing text-2xl lg:text-4xl text-wrap">
                   {firstPerson.fullName}
                 </p>
-                <div className="border-y border-javanese py-3">
+                <div className="border-y text-sm border-javanese py-3">
                   <p className="font-bold text-white">{firstPerson.anak}</p>
                   <p>
                     {firstPerson.bapak} & {firstPerson.ibu}
                   </p>
                 </div>
               </div>
+              {/* </div> */}
             </AnimatedCard>
           </div>
 
@@ -89,9 +91,9 @@ export default function Profile(props: IProps) {
           </div>
 
           {/* Bagian untuk Second Person */}
-          <div className="relative">
-            <div className="absolute w-1/2 scale-150  right-0 translate-x-1/2">
-              <div className="relative justify-center  aspect-square">
+          <div className="relative flex lg:col-span-4 justify-center items-center">
+            <div className="absolute flex justify-center h-1/2 w-1/2 scale-150 right-0 translate-x-1/2">
+              <div className="relative flex justify-end max-w-64 scale-150 aspect-square">
                 <Image
                   src={"/javanese-gold/batikBckL.svg"}
                   alt=""
@@ -106,14 +108,14 @@ export default function Profile(props: IProps) {
               toLeft
               className="grid grid-cols-2"
             >
-              <div className="flex text-center text-javanese-white p-4 lg:col-span-2 justify-center gap-y-3 flex-col">
+              <div className="flex text-javanese-white text-center p-4 gap-y-3 justify-center flex-col">
                 <p className="text-white">
                   {ladiesFirst ? "Mempelai  Pria" : "Mempelai Wanita"}
                 </p>
-                <p className="font-dancing text-3xl lg:text-4xl text-wrap">
+                <p className="font-dancing text-2xl lg:text-4xl text-wrap">
                   {secondPerson.fullName}
                 </p>
-                <div className="border-y border-javanese py-3">
+                <div className="border-y text-sm border-javanese py-3">
                   <p className="font-bold text-white">{secondPerson.anak}</p>
                   <p>
                     {secondPerson.bapak} & {secondPerson.ibu}
